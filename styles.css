@@ -1,0 +1,392 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    background-color: #2a3f5f;
+    color: white;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #a7d7ff;
+    border-bottom: 2px solid #a7d7ff;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 0.9rem;
+}
+
+.search-box button {
+    background-color: #2a3f5f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.sidebar-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-section h3 {
+    color: #2a3f5f;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.sidebar-section ul {
+    list-style: none;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar-section ul li a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.sidebar-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+.content {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.content h1 {
+    color: #2a3f5f;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.content h2 {
+    color: #2a3f5f;
+    font-size: 1.6rem;
+    margin: 30px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.content h3 {
+    color: #2a3f5f;
+    font-size: 1.3rem;
+    margin: 25px 0 15px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.intro-box {
+    background-color: #f0f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.intro-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Chapter List Styles */
+.chapter-section {
+    margin-bottom: 30px;
+}
+
+.chapter-section h3 {
+    color: #2a3f5f;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    background-color: #f0f7ff;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.chapter-section ul {
+    list-style: none;
+    margin-left: 15px;
+}
+
+.chapter-section ul li {
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.chapter-section ul li:before {
+    content: "•";
+    color: #0066cc;
+    position: absolute;
+    left: 0;
+}
+
+.chapter-section ul li a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.chapter-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Chapter Content Styles */
+.chapter-content {
+    line-height: 1.7;
+}
+
+.chapter-content p {
+    margin-bottom: 20px;
+}
+
+.chapter-content ul, .chapter-content ol {
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.chapter-content li {
+    margin-bottom: 8px;
+}
+
+.chapter-content h2 {
+    margin-top: 40px;
+}
+
+.chapter-content h3 {
+    margin-top: 30px;
+}
+
+.artwork-example {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.artwork-example img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-caption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.definition-box {
+    background-color: #f9f9f9;
+    border-left: 4px solid #2a3f5f;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.definition-box h4 {
+    color: #2a3f5f;
+    margin-bottom: 8px;
+}
+
+.note-box {
+    background-color: #fff8e6;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.note-box h4 {
+    color: #856404;
+    margin-bottom: 8px;
+}
+
+/* Navigation Controls */
+.chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.prev-chapter, .next-chapter {
+    padding: 10px 20px;
+    background-color: #2a3f5f;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.prev-chapter:hover, .next-chapter:hover {
+    background-color: #1c2d45;
+    text-decoration: none;
+}
+
+.chapter-number {
+    font-size: 0.9rem;
+    display: block;
+    color: #a7d7ff;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2a3f5f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+}
+
+.footer-content a {
+    color: #a7d7ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+    }
+    
+    nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .chapter-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .prev-chapter, .next-chapter {
+        text-align: center;
+    }
+}
