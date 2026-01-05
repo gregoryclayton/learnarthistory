@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnArtHistory.com - Introduction to Art History</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles. css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <h1><a href="index.html">LearnArtHistory.com</a></h1>
+                <h1><a href="index. html">LearnArtHistory. com</a></h1>
             </div>
             <nav>
                 <ul>
@@ -26,9 +26,10 @@
                     </button>
                     <div class="dropdown-menu">
                         <div class="dropdown-search">
-                            <input type="text" placeholder="Search...">
-                            <button><i class="fas fa-search"></i></button>
+                            <input type="text" id="search-input" placeholder="Search chapters...">
+                            <button id="search-button"><i class="fas fa-search"></i></button>
                         </div>
+                        <div id="search-results" class="search-results"></div>
                         <div class="dropdown-section">
                             <h4>Quick Links</h4>
                             <ul>
@@ -57,15 +58,15 @@
             <h1>Welcome to LearnArtHistory.com</h1>
             
             <div class="intro-box">
-                <p>Welcome to LearnArtHistory.com, a comprehensive, free art history tutorial for students, enthusiasts, and lifelong learners. Whether you're a complete beginner or looking to expand [...]
-                <p>This site contains a series of step-by-step chapters that will introduce you to major art movements, influential artists, and the historical contexts that shaped them. Each chapter [...]
+                <p>Welcome to LearnArtHistory.com, a comprehensive, free art history tutorial for students, enthusiasts, and lifelong learners. Whether you're a complete beginner or looking to expand [...]</p>
+                <p>This site contains a series of step-by-step chapters that will introduce you to major art movements, influential artists, and the historical contexts that shaped them. Each chapter [...]</p>
             </div>
 
             <div class="chapter-list">
                 <h2>Chapter List</h2>
                 
                 <div class="chapter-section">
-                    <h3>0. 0 — Introduction to Art History</h3>
+                    <h3>0.0 — Introduction to Art History</h3>
                     <ul>
                         <li><a href="chapter0.1.html">0.1 — Introduction to Art History and Why It Matters</a></li>
                         <li><a href="chapter0.2.html">0.2 — How to Study Art History</a></li>
@@ -167,5 +168,7 @@
             <p>Contact: <a href="mailto:info@learnarthistory.com">info@learnarthistory.com</a></p>
         </div>
     </footer>
+
+    <script src="search.js"></script>
 </body>
 </html>
