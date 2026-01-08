@@ -458,3 +458,30 @@ searchInput.addEventListener('focus', function() {
         displayResults(results, searchInput.value);
     }
 });
+
+// Hide/Show Header on Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    let lastScrollTop = 0;
+    const scrollThreshold = 10; // Minimum scroll amount before triggering
+
+    window.addEventListener('scroll', function() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Don't do anything if scroll amount is below threshold
+        if (Math.abs(lastScrollTop - currentScrollTop) <= scrollThreshold) {
+            return;
+        }
+
+        // Scrolling down - hide header
+        if (currentScrollTop > lastScrollTop && currentScrollTop > header.offsetHeight) {
+            header.classList.add('header-hidden');
+        } 
+        // Scrolling up - show header
+        else {
+            header.classList.remove('header-hidden');
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 :  currentScrollTop;
+    }, false);
+});
