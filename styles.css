@@ -350,7 +350,7 @@ nav ul li a:hover, nav ul li a. active {
 /* Container Layout */
 .container {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 0 20px;
 }
 
