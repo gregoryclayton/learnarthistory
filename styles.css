@@ -51,6 +51,10 @@ header {
     text-decoration: none;
 }
 
+.logo {
+    display: flex;
+}
+
 nav {
     display: flex;
     align-items: center;
