@@ -200,6 +200,19 @@ nav ul li a:hover, nav ul li a. active {
     background-color: #1c2d45;
 }
 
+/* Fix dropdown menu positioning on larger screens */
+@media (min-width: 769px) {
+    .dropdown-menu {
+        right: auto;
+        left: 0;
+    }
+    
+    .dropdown-menu::before {
+        right: auto;
+        left: 20px;
+    }
+}
+
 /* Search Results Styles */
 .search-results {
     display: none;
