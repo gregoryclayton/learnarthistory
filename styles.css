@@ -564,14 +564,9 @@ footer {
 @media (max-width: 768px) {
     /* Center logo/title on mobile */
     .logo {
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        text-align: center;
         width: 100%;
-    }
-    
-    .logo h1 {
-        text-align: center;
     }
     
     .header-container {
