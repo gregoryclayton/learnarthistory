@@ -1,27 +1,15 @@
 /* Reset and Base Styles */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
+html {
     overflow-x: hidden;
-}
-
-/* Hide/Show Header on Scroll */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right:  0;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-    overflow-x: hidden;
-}
-
-header.header-hidden {
-    transform: translateY(-100%);
+    width: 100%;
 }
 
 body {
@@ -29,11 +17,14 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8f8f8;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 a {
     color: #0066cc;
-    text-decoration:  none;
+    text-decoration: none;
 }
 
 a:hover {
@@ -44,16 +35,18 @@ a:hover {
 header {
     background-color: #2a3f5f;
     color: white;
-    padding: 0. 5rem 0;
+    padding: 0.5rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .header-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin:  0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,11 +60,12 @@ header {
 
 .logo a {
     color: white;
-    text-decoration: none;
+    text-decoration:  none;
 }
 
 .logo {
     display: flex;
+    align-items: center;
 }
 
 nav {
@@ -97,7 +91,8 @@ nav ul li a {
     transition: all 0.3s ease;
 }
 
-nav ul li a:hover, nav ul li a. active {
+nav ul li a:hover,
+nav ul li a.active {
     color: #a7d7ff;
     border-bottom: 2px solid #a7d7ff;
 }
@@ -109,21 +104,21 @@ nav ul li a:hover, nav ul li a. active {
 
 .dropdown-toggle {
     background-color: transparent;
+    border: none;
     color: white;
     padding: 8px 15px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.95rem;
-    font-weight:  500;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
 }
 
-.dropdown-toggle:hover {
+. dropdown-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .dropdown-toggle i {
@@ -131,39 +126,40 @@ nav ul li a:hover, nav ul li a. active {
     transition: transform 0.3s ease;
 }
 
-.dropdown:hover .dropdown-toggle i: last-child {
+.dropdown:hover .dropdown-toggle i:last-child {
     transform: rotate(180deg);
 }
 
 .dropdown-menu {
     position:  absolute;
     top: 100%;
-    right: 0;
+    left: 0;
     background-color: white;
     border-radius: 8px;
-    box-shadow:  0 4px 15px rgba(0, 0, 0, 0.15);
-    min-width: 280px;
-    max-width: calc(100vw - 40px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 280px;
+    max-width: 90vw;
     padding: 15px;
     opacity: 0;
-    visibility: hidden;
+    visibility:  hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
     margin-top: 10px;
+    z-index:  1001;
 }
 
 .dropdown:hover .dropdown-menu,
-. dropdown:focus-within .dropdown-menu {
+.dropdown:focus-within .dropdown-menu {
     opacity: 1;
-    visibility:  visible;
+    visibility: visible;
     transform: translateY(0);
 }
 
-.dropdown-menu::before {
+.dropdown-menu:: before {
     content: '';
     position: absolute;
     top: -10px;
-    right: 20px;
+    left: 20px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid white;
@@ -181,16 +177,17 @@ nav ul li a:hover, nav ul li a. active {
     border-radius: 4px 0 0 4px;
     font-size: 0.95rem;
     outline: none;
+    min-width: 0;
 }
 
-.dropdown-search input:focus {
-    border-color: #0066cc;
+.dropdown-search input: focus {
+    border-color:  #0066cc;
 }
 
 .dropdown-search button {
     background-color: #2a3f5f;
     color: white;
-    border: none;
+    border:  none;
     padding: 10px 14px;
     border-radius:  0 4px 4px 0;
     cursor: pointer;
@@ -201,25 +198,12 @@ nav ul li a:hover, nav ul li a. active {
     background-color: #1c2d45;
 }
 
-/* Fix dropdown menu positioning on larger screens */
-@media (min-width: 769px) {
-    .dropdown-menu {
-        right: auto;
-        left: 0;
-    }
-    
-    . dropdown-menu::before {
-        right: auto;
-        left:  20px;
-    }
-}
-
 /* Search Results Styles */
 .search-results {
     display: none;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
+    padding-bottom:  15px;
     max-height: 350px;
     overflow-y:  auto;
 }
@@ -247,7 +231,7 @@ nav ul li a:hover, nav ul li a. active {
 .results-list li a {
     display: block;
     padding: 8px 10px;
-    border-radius: 4px;
+    border-radius:  4px;
     text-decoration: none;
     transition: background-color 0.2s ease;
 }
@@ -262,10 +246,10 @@ nav ul li a:hover, nav ul li a. active {
     background-color: #2a3f5f;
     color: white;
     padding:  2px 6px;
-    border-radius:  3px;
+    border-radius: 3px;
     font-size: 0.75rem;
-    margin-right: 8px;
-    font-weight:  600;
+    margin-right:  8px;
+    font-weight: 600;
 }
 
 . result-title {
@@ -279,7 +263,7 @@ nav ul li a:hover, nav ul li a. active {
     border-radius: 2px;
 }
 
-.result-section {
+. result-section {
     display: block;
     font-size: 0.75rem;
     color: #888;
@@ -287,9 +271,9 @@ nav ul li a:hover, nav ul li a. active {
     margin-left: 36px;
 }
 
-. no-results {
+.no-results {
     padding: 10px;
-    text-align:  center;
+    text-align: center;
     color: #666;
 }
 
@@ -298,7 +282,7 @@ nav ul li a:hover, nav ul li a. active {
     font-size: 0.9rem;
 }
 
-. no-results .suggestion {
+. no-results . suggestion {
     font-size: 0.8rem;
     color: #888;
 }
@@ -320,7 +304,7 @@ nav ul li a:hover, nav ul li a. active {
     margin-bottom: 0;
 }
 
-. dropdown-section h4 {
+.dropdown-section h4 {
     color: #2a3f5f;
     margin-bottom: 8px;
     font-size: 0.95rem;
@@ -333,7 +317,7 @@ nav ul li a:hover, nav ul li a. active {
 }
 
 .dropdown-section ul li {
-    margin-bottom: 6px;
+    margin-bottom:  6px;
 }
 
 .dropdown-section ul li a {
@@ -345,14 +329,15 @@ nav ul li a:hover, nav ul li a. active {
 }
 
 .dropdown-section ul li a:hover {
-    text-decoration:  underline;
+    text-decoration: underline;
 }
 
 /* Container Layout */
 .container {
     max-width: 1200px;
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Main Content Styles */
@@ -360,29 +345,29 @@ nav ul li a:hover, nav ul li a. active {
     background-color: white;
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-. content h1 {
+.content h1 {
     color: #2a3f5f;
     font-size: 2rem;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom:  2px solid #eee;
 }
 
 .content h2 {
     color: #2a3f5f;
-    font-size:  1.6rem;
+    font-size: 1.6rem;
     margin:  30px 0 15px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+    border-bottom:  1px solid #eee;
 }
 
 .content h3 {
     color: #2a3f5f;
     font-size: 1.3rem;
-    margin: 25px 0 15px;
+    margin:  25px 0 15px;
 }
 
 .content p {
@@ -394,11 +379,11 @@ nav ul li a:hover, nav ul li a. active {
     background-color: #f0f7ff;
     border-left: 4px solid #0066cc;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom:  30px;
     border-radius: 0 8px 8px 0;
 }
 
-.intro-box p:last-child {
+.intro-box p: last-child {
     margin-bottom: 0;
 }
 
@@ -416,7 +401,7 @@ nav ul li a:hover, nav ul li a. active {
     border-radius:  4px;
 }
 
-. chapter-section ul {
+.chapter-section ul {
     list-style: none;
     margin-left: 15px;
 }
@@ -427,11 +412,11 @@ nav ul li a:hover, nav ul li a. active {
     position: relative;
 }
 
-.chapter-section ul li:before {
-    content:  "•";
+.chapter-section ul li:: before {
+    content: "•";
     color: #0066cc;
     position: absolute;
-    left:  0;
+    left: 0;
 }
 
 .chapter-section ul li a {
@@ -453,7 +438,8 @@ nav ul li a:hover, nav ul li a. active {
     margin-bottom: 20px;
 }
 
-.chapter-content ul, .chapter-content ol {
+.chapter-content ul,
+.chapter-content ol {
     margin-bottom: 20px;
     margin-left: 30px;
 }
@@ -470,8 +456,8 @@ nav ul li a:hover, nav ul li a. active {
     margin-top: 30px;
 }
 
-. artwork-example {
-    margin:  30px 0;
+.artwork-example {
+    margin: 30px 0;
     text-align: center;
 }
 
@@ -492,24 +478,24 @@ nav ul li a:hover, nav ul li a. active {
     background-color: #f9f9f9;
     border-left: 4px solid #2a3f5f;
     padding: 15px;
-    margin: 20px 0;
+    margin:  20px 0;
     border-radius: 0 8px 8px 0;
 }
 
 .definition-box h4 {
-    color: #2a3f5f;
+    color:  #2a3f5f;
     margin-bottom: 8px;
 }
 
 .note-box {
-    background-color: #fff8e6;
+    background-color:  #fff8e6;
     border-left: 4px solid #ffc107;
     padding: 15px;
     margin: 20px 0;
     border-radius: 0 8px 8px 0;
 }
 
-.note-box h4 {
+. note-box h4 {
     color: #856404;
     margin-bottom:  8px;
 }
@@ -523,7 +509,8 @@ nav ul li a:hover, nav ul li a. active {
     border-top: 1px solid #eee;
 }
 
-.prev-chapter, .next-chapter {
+.prev-chapter,
+.next-chapter {
     padding: 10px 20px;
     background-color: #2a3f5f;
     color: white;
@@ -533,7 +520,8 @@ nav ul li a:hover, nav ul li a. active {
     display: inline-block;
 }
 
-.prev-chapter:hover, .next-chapter:hover {
+.prev-chapter:hover,
+.next-chapter:hover {
     background-color: #1c2d45;
     text-decoration: none;
 }
@@ -548,9 +536,10 @@ nav ul li a:hover, nav ul li a. active {
 footer {
     background-color: #2a3f5f;
     color:  white;
-    text-align:  center;
+    text-align: center;
     padding: 20px;
-    margin-top:  40px;
+    margin-top: 40px;
+    width: 100%;
 }
 
 . footer-content p {
@@ -569,49 +558,49 @@ footer {
         align-items: center;
         width: 100%;
     }
-    
+
     .header-container {
         flex-direction: column;
         padding: 10px;
     }
-    
+
     nav {
         margin-top: 15px;
         flex-direction: column;
         gap: 10px;
     }
-    
+
     nav ul {
         margin-bottom: 10px;
     }
-    
+
     nav ul li {
         margin-left: 10px;
         margin-right: 10px;
     }
-    
-    . dropdown {
+
+    .dropdown {
         position: static;
     }
-    
+
     .dropdown-menu {
         position: absolute;
         left: 50%;
         transform: translateX(-50%) translateY(10px);
         right: auto;
-        min-width: 280px;
-        max-width:  calc(100vw - 20px);
+        width: 280px;
+        max-width: calc(100vw - 40px);
     }
-    
+
     .dropdown:hover .dropdown-menu,
     .dropdown:focus-within .dropdown-menu {
         transform: translateX(-50%) translateY(0);
     }
-    
-    . dropdown-menu::before {
-        right: auto;
+
+    .dropdown-menu::before {
         left: 50%;
         transform: translateX(-50%);
+        right: auto;
     }
 }
 
@@ -624,7 +613,7 @@ footer {
     padding: 0;
 }
 
-. glossary-nav li {
+.glossary-nav li {
     text-align: center;
 }
 
@@ -648,16 +637,17 @@ footer {
     .content {
         padding: 20px;
     }
-    
-    . chapter-navigation {
+
+    .chapter-navigation {
         flex-direction: column;
         gap: 15px;
     }
-    
-    .prev-chapter, .next-chapter {
+
+    . prev-chapter,
+    .next-chapter {
         text-align: center;
     }
-    
+
     .glossary-nav {
         grid-template-columns: repeat(3, 1fr);
     }
