@@ -209,7 +209,7 @@ nav ul li a:hover, nav ul li a.active {
     
     . dropdown-menu::before {
         right: auto;
-        left:  20px;
+        left:  0;
     }
 }
 
