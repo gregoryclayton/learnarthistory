@@ -208,16 +208,7 @@ nav ul li a:hover, nav ul li a. active {
         padding: 10px;
     }
     
-    /* Add these new styles for centered logo/title */
-    .logo {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .logo h1 {
-        text-align: center;
-    }
+   
     
     nav {
         margin-top: 15px;
@@ -603,6 +594,18 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
+     /* Add these new styles for centered logo/title */
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo h1 {
+        text-align: center;
+    }
+    
     .header-container {
         flex-direction: column;
         padding: 10px;
