@@ -633,6 +633,35 @@ footer {
     }
 }
 
+ /* Glossary letter navigation grid */
+.glossary-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+.glossary-nav li {
+    text-align: center;
+}
+
+.glossary-nav li a {
+    display: block;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.glossary-nav li a:hover {
+    background-color: #2a3f5f;
+    color: white;
+    text-decoration: none;
+}
+
 @media (max-width: 600px) {
     .content {
         padding: 20px;
